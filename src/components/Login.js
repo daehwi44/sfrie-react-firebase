@@ -6,10 +6,10 @@ import { useNavigate } from 'react-router-dom';
 
 const Login = ({setIsAuth}) => {
   const navigate = useNavigate();
-  const loginInwithGoogle = () => {
+  const loginInWithGoogle = () => {
     // Googleでログイン
     signInWithPopup(auth, provider).then((result) => {
-      localStorage.setItem("IsAuth", true);
+      localStorage.setItem("isAuth", true);
       setIsAuth(true);
       navigate("/");
     });
@@ -19,7 +19,7 @@ const Login = ({setIsAuth}) => {
   return (
     <div>
       <p>ログインして始める</p>
-      <button onClick={loginInwithGoogle}>Googleでログイン</button>
+      <button onClick={loginInWithGoogle}>Googleでログイン</button>
     </div>
   )
 }
