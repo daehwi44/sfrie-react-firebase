@@ -7,33 +7,39 @@ import {
   faFilePen,
   faArrowRightToBracket,
 } from "@fortawesome/free-solid-svg-icons";
+import Image from "../img/logo.png";
 
 const Navbar = ({ isAuth }) => {
   return (
-    <nav>
+    <div className="menubar">
       <Link to="/">
-        <FontAwesomeIcon icon={faHouse} />
-        ホーム
+        <img className="logo" src={Image} />
       </Link>
-
-      {!isAuth ? (
-        <Link to="/login">
-          <FontAwesomeIcon icon={faArrowRightToBracket} />
-          ログイン
+      <nav>
+        <Link to="/">
+          <FontAwesomeIcon icon={faHouse} />
+          ホーム
         </Link>
-      ) : (
-        <>
-          <Link to="/logout">
+
+        {!isAuth ? (
+          <Link to="/login">
             <FontAwesomeIcon icon={faArrowRightToBracket} />
-            ログアウト
+            ログイン
           </Link>
-          <Link to="/createPost">
-            <FontAwesomeIcon icon={faFilePen} />
-            記事投稿
-          </Link>
-        </>
-      )}
-    </nav>
+        ) : (
+          <>
+            <Link to="/createPost">
+              <FontAwesomeIcon icon={faFilePen} />
+              記事投稿
+            </Link>
+            <Link to="/logout">
+              <FontAwesomeIcon icon={faArrowRightToBracket} />
+              ログアウト
+            </Link>
+          </>
+        )}
+      </nav>
+    </div>
   );
 };
 

@@ -22,6 +22,7 @@
 .postHeader h1 {
   text-align: center;
   margin-top: 5px;
+  font-size: 25px;
 }
 
 .postContents .postTextContainer {

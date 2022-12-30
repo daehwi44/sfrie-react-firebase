@@ -29,11 +29,8 @@ const Home = () => {
             </div>
 
             <div className="postTextContainer">{post.postsText}</div>
-            <a href="https://daehwi44.github.io/booksapi/">
-              JAVASCRIPTの本紹介
-            </a>
             <div className="nameAndDeleteButton">
-              <h3>@{post.author.username}</h3>
+              <h3>投稿者：{post.author.username}</h3>
               <button onClick={() => handleDelete(post.id)}>削除</button>
             </div>
           </div>
